@@ -1,0 +1,15 @@
+FROM node:21
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm install
+
+Run npm run build
+
+RUN rm -rf ./src
+
+EPXOSE 3000
+
+CMD ["npm", "run", "start:prod"]
